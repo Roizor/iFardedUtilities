@@ -4,4 +4,5 @@ main: ifarded.lol.ifu.IFUtilities
 api-version: 1.20
 commands:
   ifu:
-    description: The IFU command.
+    description: Everything iFarded.
+    usage: /ifu <reload|help>

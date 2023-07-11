@@ -15,7 +15,7 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
             sender.sendMessage(IFUtilities.PREFIX + "Not enough arguments!");
-            sender.sendMessage("/ifu help");
+            sender.sendMessage(IFUtilities.PREFIX + "Try /ifu <help|reload>");
             return true;
         }
         switch (args[0]) {
@@ -41,7 +41,6 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
                     sender.isOp() && IFUtilities.getPlugin().getConfig().getBoolean("op-can-use-plugin")) {
                 commands.add("rl");
                 commands.add("reload");
-                commands.add("updatecheck");
             }
             return commands;
         }
