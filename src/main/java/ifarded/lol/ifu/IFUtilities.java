@@ -10,15 +10,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class IFUtilities extends JavaPlugin {
     public final String CURRENT_VERSION = this.getDescription().getVersion();
     public final String CONFIG_VERSION = this.getConfig().getString("version");
-    public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&d[&aiFUtilities] &r");
+    public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
     private static IFUtilities plugin;
 
     public void onEnable() {

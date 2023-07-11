@@ -27,6 +27,6 @@ public class JoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-
+        e.getPlayer().sendMessage("Welcome to the iFarded Industries Minecraft Server!!!");
     }
 }

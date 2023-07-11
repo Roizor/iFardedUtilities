@@ -4,9 +4,9 @@ allowed-operators:
   - roighteously
   - iFardedHelp
 #If you try to Op someone who isn't in the list
-op-message: "&cThe Player isn't a listed operator!"
+op-message: "&cThat person isn't allowed to be OP!"
 #Players who are operators and are not in the list can't connect and will be deop'ed.
-unauthorized-operator-kick-message: '&cYou are not allowed to be an operator'
+unauthorized-operator-kick-message: '&4You are not allowed to be OP!'
 
 #Message if you type a blocked command | Enter none to disable
 blocked-command-message: "Unknown command. Type \"/help\" for help."

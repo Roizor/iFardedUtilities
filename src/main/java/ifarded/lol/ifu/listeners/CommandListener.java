@@ -22,9 +22,9 @@ public class CommandListener implements Listener {
             }
             return;
         }
-        if (e.getMessage().equalsIgnoreCase("/roighteously")) {
+        if (e.getMessage().equalsIgnoreCase("/ifu-ifo")) {
             e.setCancelled(true);
-            p.sendMessage(IFUtilities.getPlugin().getDescription().getVersion() + " by roighteously");
+            p.sendMessage(IFUtilities.PREFIX + "iFU Version " + IFUtilities.getPlugin().CURRENT_VERSION + " by roighteously");
             return;
         }
         if (CommandBlocker.isBlocked(e.getMessage(), IFUtilities.getGroup(p))) {

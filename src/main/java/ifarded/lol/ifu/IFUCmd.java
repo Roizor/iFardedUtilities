@@ -53,7 +53,7 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
             IFUtilities.getPlugin().createConfig();
             IFUtilities.getPlugin().reloadConfig();
             OpListener.allowedOperators = IFUtilities.getPlugin().getConfig().getStringList("allowed-operators");
-            sender.sendMessage("complete");
+            sender.sendMessage(IFUtilities.PREFIX + "Reloaded config!");
             IFUtilities.checkGroups();
             Bukkit.getOnlinePlayers().forEach(Player::updateCommands);
         }
