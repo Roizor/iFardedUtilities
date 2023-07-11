@@ -10,7 +10,7 @@ unauthorized-operator-kick-message: '&4You are not allowed to be OP!'
 
 #Message if you type a blocked command | Enter none to disable
 blocked-command-message: "Unknown command. Type \"/help\" for help."
-#Message shown if you type /pl | Enter none to disable | Players with the permission plhide.bypass will see the real plugins
+#Message shown if you type /pl | Enter none to disable | Players with the permission ifu.bypass will see the real plugins
 /pl-message: 'Plugins (0):'
 
 groups:
@@ -53,7 +53,7 @@ groups:
       - Test
 
   #This group for example will remove and block all commands
-  #add permission plhide.group.test to apply this group
+  #add permission ifu.group.test to apply this group
   test:
     commands: []
     group-mode: whitelist
@@ -62,4 +62,4 @@ groups:
 
 
 #Don't change
-version: "1.0"
+version: "1.1"

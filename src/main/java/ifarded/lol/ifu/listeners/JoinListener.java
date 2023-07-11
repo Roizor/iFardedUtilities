@@ -3,6 +3,7 @@ package ifarded.lol.ifu.listeners;
 import java.util.List;
 
 import ifarded.lol.ifu.IFUtilities;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,6 +28,7 @@ public class JoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        e.getPlayer().sendMessage("Welcome to the iFarded Industries Minecraft Server!!!");
+        e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&a&lWelcome to the iFarded Industries Minecraft Server!&r\n" +
+                "Remember that &bgriefing is a bannable offense&r!"));
     }
 }
