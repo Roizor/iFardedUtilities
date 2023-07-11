@@ -17,11 +17,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class IFUtilities extends JavaPlugin {
     public final String CURRENT_VERSION = this.getDescription().getVersion();
-    public final String CONFIG_VERSION = "1.0";
-    public static final String PREFIX = "[ifu] ";
+    public final String CONFIG_VERSION = this.getConfig().getString("version");
+    public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&d[&aiFUtilities] &r");
     private static IFUtilities plugin;
 
     public void onEnable() {
+        if (!CURRENT_VERSION.equals(CONFIG_VERSION)) {
+            this.getLogger().severe("IFU is out of sync with it's config file.");
+            this.getLogger().severe("IFU v" + CURRENT_VERSION + ", config v" + CONFIG_VERSION);
+            this.getLogger().severe("Beware. Here be dragons, the plugin may not even work.");
+        }
         plugin = this;
         createConfig();
         reloadConfig();

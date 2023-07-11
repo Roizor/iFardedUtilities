@@ -37,7 +37,7 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (args.length == 1) {
             List<String> commands = new ArrayList<>();
-            if (sender.hasPermission("plhide.reload") &&
+            if (sender.hasPermission("ifu.reload") &&
                     sender.isOp() && IFUtilities.getPlugin().getConfig().getBoolean("op-can-use-plugin")) {
                 commands.add("rl");
                 commands.add("reload");
@@ -49,7 +49,7 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
     }
 
     private static void rl(CommandSender sender) {
-        if (sender.hasPermission("plhide.reload")) {
+        if (sender.hasPermission("ifu.reload")) {
             IFUtilities.getPlugin().createConfig();
             IFUtilities.getPlugin().reloadConfig();
             OpListener.allowedOperators = IFUtilities.getPlugin().getConfig().getStringList("allowed-operators");

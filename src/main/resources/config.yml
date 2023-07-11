@@ -13,12 +13,8 @@ blocked-command-message: "Unknown command. Type \"/help\" for help."
 #Message shown if you type /pl | Enter none to disable | Players with the permission plhide.bypass will see the real plugins
 /pl-message: 'Plugins (0):'
 
-#Stay on the newest version to get better features!
-#Enable or disable automatic ingame update notification on join
-update-notify: true
-
 groups:
-  #if no group is set via plhide.group.<group> this will be applied
+  #if no group is set via ifu.group.<group> this will be applied
   #do not rename the default group!
   #blocked commands will be automatically removed from the tabcompletion
   default:
@@ -43,7 +39,7 @@ groups:
       - bukkit:version
       - bukkit:about
       #The plugin commands
-      - ifu:plhide
+      - ifutilities:ifu
       - ifu
     #If the value is blacklist, the commands are blocked and invisible
     #If the value is whitelist, the commands only executable and visible
@@ -58,7 +54,7 @@ groups:
 
   #This group for example will remove and block all commands
   #add permission plhide.group.test to apply this group
-  Test:
+  test:
     commands: []
     group-mode: whitelist
     priority: 1
