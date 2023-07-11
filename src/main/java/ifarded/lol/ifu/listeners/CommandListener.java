@@ -2,6 +2,7 @@ package ifarded.lol.ifu.listeners;
 
 import ifarded.lol.ifu.IFUtilities;
 import ifarded.lol.ifu.util.CommandBlocker;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,6 +18,15 @@ public class CommandListener implements Listener {
                 String message = IFUtilities.getColoredConfigString("/pl-message");
                 if (!message.equals("none"))
                     p.sendMessage(message);
+                e.setCancelled(true);
+                return;
+            }
+            return;
+        }
+        if (command[0].equalsIgnoreCase("/stop") || command[0].equalsIgnoreCase("/minecraft:stop") || command[0].equalsIgnoreCase("/restart")) {
+            if(!(e instanceof Player)) {
+                //Dont go on with the method, because the sender isn't from a player
+                e.getPlayer().sendMessage(IFUtilities.PREFIX + "You can't stop the server!");
                 e.setCancelled(true);
                 return;
             }
