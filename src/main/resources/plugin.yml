@@ -1,0 +1,7 @@
+name: iFUtilities
+version: '${project.version}'
+main: ifarded.lol.ifu.IFUtilities
+api-version: 1.20
+commands:
+  ifu:
+    description: The IFU command.
