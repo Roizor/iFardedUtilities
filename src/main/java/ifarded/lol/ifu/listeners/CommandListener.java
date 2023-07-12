@@ -2,7 +2,6 @@ package ifarded.lol.ifu.listeners;
 
 import ifarded.lol.ifu.IFUtilities;
 import ifarded.lol.ifu.util.CommandBlocker;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -3,7 +3,12 @@ package ifarded.lol.ifu.listeners;
 import java.util.List;
 
 import ifarded.lol.ifu.IFUtilities;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
+
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,7 +24,7 @@ public class JoinListener implements Listener {
             if (!allowedOperatorList.contains(p.getName())) {
                 String message = IFUtilities.getColoredConfigString("unauthorized-operator-kick-message");
                 e.setResult(PlayerLoginEvent.Result.KICK_OTHER);
-                e.setKickMessage(message);
+                e.getPlayer().kick(Component.text(message));
                 IFUtilities.getPlugin().getServer().getConsoleSender().sendMessage(message);
                 p.setOp(false);
             }
@@ -28,7 +33,20 @@ public class JoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&a&lWelcome to the iFarded Industries Minecraft Server!&r\n" +
-                "Remember that &bgriefing is a bannable offense&r!"));
+        e.getPlayer().sendMessage(Component.text("Welcome to the iFarded Industries Minecraft server!")
+                .color(TextColor.fromHexString("#00FF00"))
+                .decorate(TextDecoration.BOLD)
+                .appendNewline()
+                .append(Component.text("Remember that "))
+                .append(
+                    Component.text("griefing is a bannable offense!")
+                    .color(TextColor.fromHexString("#55FFFF"))
+                ));
+                e.getPlayer().sendPlayerListHeaderAndFooter(
+                    Component.text("iFarded Industries Minecraft server")
+                    .color(TextColor.color(TextColor.fromHexString("#00FF00"))),
+                    Component.text("ifarded.lol")
+                    .color(TextColor.fromHexString("#55FFFF"))
+                    );
     }
 }

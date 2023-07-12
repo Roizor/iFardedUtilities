@@ -3,6 +3,8 @@ package ifarded.lol.ifu.listeners;
 import java.util.List;
 
 import ifarded.lol.ifu.IFUtilities;
+import net.kyori.adventure.text.Component;
+
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -46,7 +48,7 @@ public class OpListener implements Listener {
                         if (!OpListener.allowedOperators.contains(offlinePlayer.getName())) {
                             offlinePlayer.setOp(false);
                             if (offlinePlayer.isOnline() && offlinePlayer.getPlayer() != null)
-                                offlinePlayer.getPlayer().kickPlayer(IFUtilities.getColoredConfigString("unauthorized-operator-kick-message"));
+                                offlinePlayer.getPlayer().kick(Component.text(IFUtilities.getColoredConfigString("unauthorized-operator-kick-message")));
                         }
                     });
             }
