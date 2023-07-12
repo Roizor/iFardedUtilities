@@ -6,3 +6,8 @@ commands:
   ifu:
     description: Everything iFarded.
     usage: /ifu <command>
+    permission: ifu.cmd
+  civilization:
+    description: Go to the civilization
+    usage: /civilization
+    permission: ifu.civilization

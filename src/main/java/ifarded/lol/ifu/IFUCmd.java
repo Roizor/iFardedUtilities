@@ -53,6 +53,7 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
                 return true;
             case "help":
                 sender.sendMessage(Component.text(IFUtilities.PREFIX + "IFU v" + (IFUtilities.getPlugin()).CURRENT_VERSION + ", Config is @v" + (IFUtilities.getPlugin()).CONFIG_VERSION));
+                sender.sendMessage("/ifu civilization Go to the civilization");
                 sender.sendMessage("/ifu reload Reloads the config");
                 sender.sendMessage("/ifu rules See the server rules");
                 sender.sendMessage("/ifu discord Get an invite to our Discord server");
