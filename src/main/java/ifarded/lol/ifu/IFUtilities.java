@@ -6,6 +6,7 @@ import ifarded.lol.ifu.listeners.CommandListener;
 import ifarded.lol.ifu.listeners.CommandSuggestionListener;
 import ifarded.lol.ifu.listeners.JoinListener;
 import ifarded.lol.ifu.listeners.OpListener;
+import ifarded.lol.ifu.listeners.ServerPingListener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -41,6 +42,7 @@ public class IFUtilities extends JavaPlugin {
         pw.registerEvents(new CommandSuggestionListener(), this);
         pw.registerEvents(new CommandListener(), this);
         pw.registerEvents(new OpListener(), this);
+        pw.registerEvents(new ServerPingListener(), this);
     }
 
     public void createConfig() {
