@@ -7,9 +7,6 @@ import ifarded.lol.ifu.listeners.CommandSuggestionListener;
 import ifarded.lol.ifu.listeners.JoinListener;
 import ifarded.lol.ifu.listeners.OpListener;
 import ifarded.lol.ifu.listeners.ServerPingListener;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.format.TextColor;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -21,16 +18,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class IFUtilities extends JavaPlugin {
     public final String CURRENT_VERSION = this.getDescription().getVersion();
     public final String CONFIG_VERSION = this.getConfig().getString("version");
-    public static final TextComponent PREFIX = Component.text("[")
-    .color(TextColor.fromHexString(IFColors.AQUA))
-    .append(
-        Component.text("iFUtilities")
-        .color(TextColor.fromHexString(IFColors.GREEN))
-    )
-    .append(
-        Component.text("] ")
-        .color(TextColor.fromHexString(IFColors.AQUA))
-    );
+    public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
+    // Component.text("[")
+    // .color(TextColor.fromHexString(IFColors.AQUA))
+    // .append(
+    //     Component.text("iFUtilities")
+    //     .color(TextColor.fromHexString(IFColors.GREEN))
+    // )
+    // .append(
+    //     Component.text("] ")
+    //     .color(TextColor.fromHexString(IFColors.AQUA))
+    // )
     private static IFUtilities plugin;
 
     public void onEnable() {
@@ -54,7 +52,7 @@ public class IFUtilities extends JavaPlugin {
         pw.registerEvents(new CommandSuggestionListener(), this);
         pw.registerEvents(new CommandListener(), this);
         pw.registerEvents(new OpListener(), this);
-        pw.registerEvents(new ServerPingListener(), this);
+        pw.registerEvents(new ServerPingListener(), plugin);
     }
 
     public void createConfig() {
