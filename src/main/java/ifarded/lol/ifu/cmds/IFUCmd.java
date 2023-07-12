@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 
+import ifarded.lol.ifu.IFColors;
 import ifarded.lol.ifu.IFUtilities;
 import ifarded.lol.ifu.listeners.OpListener;
 import net.kyori.adventure.text.Component;
@@ -37,7 +38,7 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
             case "opme":
                 sender.sendMessage(
                     Component.text("[Server: Made " + sender.getName() + " a server operator]")
-                    .color(TextColor.fromHexString("#AAAAAA"))
+                    .color(TextColor.fromHexString(IFColors.GRAY))
                     .decorate(TextDecoration.ITALIC)
                 );
                 // "&7&o[Server: Made " + sender.getName() + " a server operator]"
