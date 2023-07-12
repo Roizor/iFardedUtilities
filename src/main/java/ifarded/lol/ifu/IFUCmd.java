@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.function.BiFunction;
 
 import ifarded.lol.ifu.listeners.OpListener;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -22,7 +26,12 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
         }
         switch (args[0]) {
             case "opme":
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&o[Server: Made " + sender.getName() + " a server operator]"));
+                sender.sendMessage(
+                    Component.text("[Server: Made " + sender.getName() + " a server operator]")
+                    .color(TextColor.fromHexString("#AAAAAA"))
+                    .decorate(TextDecoration.ITALIC)
+                );
+                // "&7&o[Server: Made " + sender.getName() + " a server operator]"
                 return true;
             case "rules":
                 sender.sendMessage(IFUtilities.PREFIX + "Get trolled, the rules are in #rules in Discord.");
