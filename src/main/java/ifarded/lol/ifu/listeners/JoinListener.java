@@ -43,7 +43,7 @@ public class JoinListener implements Listener {
                     .color(TextColor.fromHexString("#55FFFF"))
                 ));
                 e.getPlayer().sendPlayerListHeaderAndFooter(
-                    Component.text("iFarded Industries Minecraft server")
+                    Component.text("iFarded Industries Minecraft")
                     .color(TextColor.color(TextColor.fromHexString("#00FF00"))),
                     Component.text("ifarded.lol")
                     .color(TextColor.fromHexString("#55FFFF"))
