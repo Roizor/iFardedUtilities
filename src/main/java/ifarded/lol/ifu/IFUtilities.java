@@ -2,6 +2,7 @@ package ifarded.lol.ifu;
 
 import java.io.File;
 
+import ifarded.lol.ifu.cmds.Civilization;
 import ifarded.lol.ifu.listeners.CommandListener;
 import ifarded.lol.ifu.listeners.CommandSuggestionListener;
 import ifarded.lol.ifu.listeners.JoinListener;
@@ -44,6 +45,9 @@ public class IFUtilities extends JavaPlugin {
         initListeners();
         getCommand("ifu").setExecutor(new IFUCmd());
         getCommand("ifu").setTabCompleter(new IFUCmd());
+
+        getCommand("civilization").setExecutor(new Civilization());
+        getCommand("civilization").setExecutor(new Civilization());
     }
 
     private void initListeners() {
