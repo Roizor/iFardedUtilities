@@ -7,7 +7,7 @@ allowed-operators:
 op-message: "&cThat person isn't allowed to be OP!"
 #Players who are operators and are not in the list can't connect and will be deop'ed.
 unauthorized-operator-kick-message: '&4You are not allowed to be OP!'
-
+first-pad: "          "
 #Message if you type a blocked command | Enter none to disable
 blocked-command-message: "Unknown command. Type \"/help\" for help."
 #Message shown if you type /pl | Enter none to disable | Players with the permission ifu.bypass will see the real plugins
@@ -62,4 +62,4 @@ groups:
 
 
 #Don't change
-version: "1.2"
+version: "1.3"
