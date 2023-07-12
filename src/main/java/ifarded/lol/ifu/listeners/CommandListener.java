@@ -33,7 +33,8 @@ public class CommandListener implements Listener {
         }
         if (e.getMessage().equalsIgnoreCase("/ifu-ifo")) {
             e.setCancelled(true);
-            p.sendMessage(IFUtilities.PREFIX + "iFU Version " + IFUtilities.getPlugin().CURRENT_VERSION + " by roighteously");
+            p.sendMessage(IFUtilities.PREFIX + "iFU v" + IFUtilities.getPlugin().CURRENT_VERSION + " by roighteously");
+            p.sendMessage(IFUtilities.PREFIX + "Config is version " + IFUtilities.getPlugin().CONFIG_VERSION);
             return;
         }
         if (CommandBlocker.isBlocked(e.getMessage(), IFUtilities.getGroup(p))) {
