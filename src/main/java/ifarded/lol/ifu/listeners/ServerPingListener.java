@@ -27,7 +27,7 @@ public class ServerPingListener implements Listener {
 						.append(Component.text("        "))
 						.append(
 								Component.text("GRIEFING IS A BANNABLE")
-										.color(TextColor.fromHexString(IFColors.AQUA))
+										.color(TextColor.fromHexString(IFColors.DARK_AQUA))
 										.decorate(TextDecoration.BOLD)
 						)
 						.append(Component.text(" - "))
