@@ -3,6 +3,7 @@ package ifarded.lol.ifu;
 import java.io.File;
 
 import ifarded.lol.ifu.cmds.Civilization;
+import ifarded.lol.ifu.cmds.IFUCmd;
 import ifarded.lol.ifu.listeners.CommandListener;
 import ifarded.lol.ifu.listeners.CommandSuggestionListener;
 import ifarded.lol.ifu.listeners.JoinListener;
