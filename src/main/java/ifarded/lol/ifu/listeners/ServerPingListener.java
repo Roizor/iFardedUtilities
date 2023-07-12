@@ -12,7 +12,7 @@ public class ServerPingListener implements Listener {
 	@EventHandler
 	public void onServerPing(final ServerListPingEvent p) {
 		p.motd(
-				Component.text("iFarded Industries ")
+				Component.text("         iFarded Industries ")
 						.color(TextColor.color(TextColor.fromHexString("#00FF00")))
 						.append(
 								Component.text("[1.9 - 1.20]")
@@ -21,8 +21,9 @@ public class ServerPingListener implements Listener {
 						)
 						.appendNewline()
 						.append(
-								Component.text("GRIEFING IS A BANNABLE")
+								Component.text("        GRIEFING IS A BANNABLE")
 										.color(TextColor.fromHexString("#00AAAA"))
+										.decorate(TextDecoration.BOLD)
 						)
 						.append(Component.text(" - "))
 						.append(
