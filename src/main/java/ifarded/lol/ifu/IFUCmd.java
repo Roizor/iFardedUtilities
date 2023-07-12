@@ -11,6 +11,7 @@ import net.kyori.adventure.text.format.TextDecoration;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,6 +26,13 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
             return true;
         }
         switch (args[0]) {
+            case "civilization":
+                sender.sendMessage(Component.text(
+                    IFUtilities.PREFIX + "Sending you to the civilization!"
+                ));
+                Player p = (Player) sender;
+                p.teleport(new Location(p.getWorld(), -80, 64, 92));
+                return true;
             case "opme":
                 sender.sendMessage(
                     Component.text("[Server: Made " + sender.getName() + " a server operator]")
@@ -63,6 +71,7 @@ public class IFUCmd implements CommandExecutor, TabCompleter {
             commands.add("help");
             commands.add("discord");
             commands.add("opme");
+            commands.add("civilization");
             if (sender.hasPermission("ifu.reload")) {
                 commands.add("rl");
                 commands.add("reload");
