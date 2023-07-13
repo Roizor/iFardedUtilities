@@ -1,8 +1,9 @@
 package ifarded.lol.ifu.util;
 
 import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 
-public class IFColors {
+public class IFDeco {
 	public static final String DARK_RED_HEX = "#AA0000";
 	public static final String RED_HEX = "#FF5555";
 	public static final String GOLD_HEX = "#FFAA00";
@@ -36,4 +37,6 @@ public class IFColors {
 	public static final TextColor GRAY = TextColor.fromHexString(GRAY_HEX);
 	public static final TextColor DARK_GRAY = TextColor.fromHexString(DARK_GRAY_HEX);
 	public static final TextColor BLACK = TextColor.fromHexString(BLACK_HEX);
+
+	public static final TextDecoration BOLD = IFDeco.BOLD;
 }
