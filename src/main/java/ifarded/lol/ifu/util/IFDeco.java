@@ -38,5 +38,5 @@ public class IFDeco {
 	public static final TextColor DARK_GRAY = TextColor.fromHexString(DARK_GRAY_HEX);
 	public static final TextColor BLACK = TextColor.fromHexString(BLACK_HEX);
 
-	public static final TextDecoration BOLD = IFDeco.BOLD;
+	public static final TextDecoration BOLD = TextDecoration.BOLD;
 }
