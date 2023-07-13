@@ -2,8 +2,8 @@ package ifarded.lol.ifu.listeners;
 
 import java.util.List;
 
-import ifarded.lol.ifu.IFColors;
 import ifarded.lol.ifu.IFUtilities;
+import ifarded.lol.ifu.util.IFColors;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
@@ -35,19 +35,19 @@ public class JoinListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         e.getPlayer().sendMessage(Component.text("Welcome to the iFarded Industries Minecraft server!")
-                .color(TextColor.fromHexString(IFColors.GREEN))
+                .color(IFColors.GREEN)
                 .decorate(TextDecoration.BOLD)
                 .appendNewline()
                 .append(Component.text("Remember that "))
                 .append(
                     Component.text("griefing is a bannable offense!")
-                    .color(TextColor.fromHexString(IFColors.AQUA))
+                    .color(IFColors.AQUA)
                 ));
                 e.getPlayer().sendPlayerListHeaderAndFooter(
                     Component.text("iFarded Industries Minecraft")
-                    .color(TextColor.color(TextColor.fromHexString(IFColors.GREEN))),
+                    .color(IFColors.GREEN),
                     Component.text("ifarded.lol")
-                    .color(TextColor.fromHexString(IFColors.AQUA))
+                    .color(IFColors.AQUA)
                     );
     }
 }

@@ -22,14 +22,14 @@ public class IFUtilities extends JavaPlugin {
     public final String CONFIG_VERSION = this.getConfig().getString("version");
     public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
     // Component.text("[")
-    // .color(TextColor.fromHexString(IFColors.AQUA))
+    // .color(IFColors.AQUA)
     // .append(
     //     Component.text("iFUtilities")
-    //     .color(TextColor.fromHexString(IFColors.GREEN))
+    //     .color(IFColors.GREEN)
     // )
     // .append(
     //     Component.text("] ")
-    //     .color(TextColor.fromHexString(IFColors.AQUA))
+    //     .color(IFColors.AQUA)
     // )
     private static IFUtilities plugin;
 
