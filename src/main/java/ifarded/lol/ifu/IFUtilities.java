@@ -54,9 +54,7 @@ public class IFUtilities extends JavaPlugin {
 
     public void onEnable() {
         if (!CURRENT_VERSION.equals(CONFIG_VERSION)) {
-            this.getLogger().severe("IFU is out of sync with it's config file.");
-            this.getLogger().severe("IFU v" + CURRENT_VERSION + ", config v" + CONFIG_VERSION);
-            this.getLogger().severe("Beware. Here be dragons, the plugin may not even work.");
+            this.getLogger().severe("iFU is out of sync. v" + CURRENT_VERSION + ", config is v" + CONFIG_VERSION);
         }
         plugin = this;
         createConfig();
