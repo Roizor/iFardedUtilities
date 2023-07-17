@@ -38,7 +38,7 @@ public class IFPlayer {
          }
 
          this.player.sendMessage(playerSitEvent.getMessage());
-         seat.setPassenger(this.player);
+				 seat.addPassenger(this.player);
          this.ifu.getSeats().put(this.player.getUniqueId(), seat);
       } else if (!arg && this.isSitting()) {
          ArmorStand seat = (ArmorStand)this.ifu.getSeats().get(this.player.getUniqueId());

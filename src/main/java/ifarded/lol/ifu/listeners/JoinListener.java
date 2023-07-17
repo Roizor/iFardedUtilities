@@ -5,11 +5,7 @@ import java.util.List;
 import ifarded.lol.ifu.IFUtilities;
 import ifarded.lol.ifu.util.IFDeco;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextColor;
-import net.kyori.adventure.text.format.TextDecoration;
 
-import org.bukkit.ChatColor;
-import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

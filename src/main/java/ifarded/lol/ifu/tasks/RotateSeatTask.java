@@ -28,13 +28,13 @@ public class RotateSeatTask extends BukkitRunnable {
 				public void align(ArmorStand armorStand, float yaw) {
 					try {
 						this.method.invoke(armorStand, yaw, 0);
-					} catch (IllegalArgumentException | InvocationTargetException | IllegalAccessException var4) {
-						var4.printStackTrace();
+					} catch (IllegalArgumentException | InvocationTargetException | IllegalAccessException err) {
+						err.printStackTrace();
 					}
 
 				}
 			};
-		} catch (SecurityException | NoSuchMethodException var3) {
+		} catch (SecurityException | NoSuchMethodException err) {
 			this.alignArmorStand = new RotateSeatTask.AlignArmorStand() {
 				public void align(ArmorStand armorStand, float yaw) {
 					try {
@@ -42,8 +42,8 @@ public class RotateSeatTask extends BukkitRunnable {
 						Field yawField = entityArmorstand.getClass().getField("yaw");
 						yawField.set(entityArmorstand, yaw);
 					} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException
-							| NoSuchFieldException | NoSuchMethodException var5) {
-						var5.printStackTrace();
+							| NoSuchFieldException | NoSuchMethodException err) {
+						err.printStackTrace();
 					}
 
 				}
@@ -54,10 +54,10 @@ public class RotateSeatTask extends BukkitRunnable {
 	}
 
 	public void run() {
-		Iterator var2 = this.ifu.getSeats().values().iterator();
+		Iterator<ArmorStand> asIterator = this.ifu.getSeats().values().iterator();
 
-		while (var2.hasNext()) {
-			ArmorStand armorstand = (ArmorStand) var2.next();
+		while (asIterator.hasNext()) {
+			ArmorStand armorstand = (ArmorStand) asIterator.next();
 			if (armorstand.getPassenger() != null) {
 				this.alignArmorStand.align(armorstand, armorstand.getPassenger().getLocation().getYaw());
 			}
@@ -66,6 +66,6 @@ public class RotateSeatTask extends BukkitRunnable {
 	}
 
 	private interface AlignArmorStand {
-		void align(ArmorStand var1, float var2);
+		void align(ArmorStand var1, float asIterator);
 	}
 }
