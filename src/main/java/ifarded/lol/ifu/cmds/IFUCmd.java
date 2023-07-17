@@ -2,17 +2,14 @@ package ifarded.lol.ifu.cmds;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiFunction;
 
 import ifarded.lol.ifu.IFUtilities;
 import ifarded.lol.ifu.listeners.OpListener;
 import ifarded.lol.ifu.util.IFDeco;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

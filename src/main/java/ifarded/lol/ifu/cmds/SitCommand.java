@@ -5,6 +5,7 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
 import ifarded.lol.ifu.IFPlayer;
@@ -29,7 +30,7 @@ public class SitCommand implements CommandExecutor {
          IFPlayer player = new IFPlayer((Player)sender);
          if (player.isSitting()) {
             player.setSitting(false);
-         } else if (player.getBukkitPlayer().isOnGround()) {
+         } else if (((LivingEntity) player.getBukkitPlayer()).isOnGround()) {
             player.setSitting(true);
          } else {
             player.getBukkitPlayer().sendMessage(Component.text("You cannot sit in the air!").color(IFDeco.AQUA));
