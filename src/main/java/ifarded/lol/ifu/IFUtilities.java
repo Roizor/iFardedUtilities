@@ -29,7 +29,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class IFUtilities extends JavaPlugin {
-    public final String CURRENT_VERSION = this.getDescription().getVersion();
+    public final String CURRENT_VERSION = this.getPluginMeta().getVersion();
     public final String CONFIG_VERSION = this.getConfig().getString("version");
     public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
     private Map<UUID, ArmorStand> seats = new HashMap();
@@ -143,7 +143,7 @@ public class IFUtilities extends JavaPlugin {
     public Map<UUID, ArmorStand> getSeats() {
         return this.seats;
     }
-    
+
     public Permission getSitPermission() {
         return this.sitPermission;
     }
