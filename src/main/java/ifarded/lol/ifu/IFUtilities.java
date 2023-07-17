@@ -1,7 +1,6 @@
 package ifarded.lol.ifu;
 
 import java.io.File;
-import java.util.logging.Level;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -18,6 +17,9 @@ import ifarded.lol.ifu.listeners.PlayerDeath;
 import ifarded.lol.ifu.listeners.PlayerQuit;
 import ifarded.lol.ifu.listeners.PlayerTeleport;
 import ifarded.lol.ifu.listeners.ServerPingListener;
+import ifarded.lol.ifu.util.IFDeco;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -34,17 +36,21 @@ public class IFUtilities extends JavaPlugin {
     public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
     private Map<UUID, ArmorStand> seats = new HashMap();
     private Permission sitPermission = new Permission("ifu.sit");
-    // Component.text("[")
-    // .color(IFColors.AQUA)
-    // .append(
-    // Component.text("iFUtilities")
-    // .color(IFColors.GREEN)
-    // )
-    // .append(
-    // Component.text("] ")
-    // .color(IFColors.AQUA)
-    // )
+    public static TextComponent COMPONENT_PREFIX = Component.text("[")
+    .color(IFDeco.AQUA)
+    .append(
+    Component.text("iFUtilities")
+    .color(IFDeco.GREEN)
+    )
+    .append(
+    Component.text("] ")
+    .color(IFDeco.AQUA)
+    );
     private static IFUtilities plugin;
+
+    public static TextComponent prefixedMessage(TextComponent message) {
+        return IFUtilities.COMPONENT_PREFIX.append(message);
+    }
 
     public void onEnable() {
         if (!CURRENT_VERSION.equals(CONFIG_VERSION)) {

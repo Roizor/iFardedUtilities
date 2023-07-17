@@ -3,6 +3,7 @@ package ifarded.lol.ifu.cmds;
 import java.util.List;
 
 import ifarded.lol.ifu.IFUtilities;
+import ifarded.lol.ifu.util.IFDeco;
 import net.kyori.adventure.text.Component;
 
 import org.bukkit.Location;
@@ -14,8 +15,7 @@ import org.bukkit.entity.Player;
 
 public class Civilization implements CommandExecutor, TabCompleter {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		sender.sendMessage(Component.text(
-		IFUtilities.PREFIX + "Sending you to the civilization!"));
+		sender.sendMessage(IFUtilities.prefixedMessage(Component.text("Sending you to the civilization!").color(IFDeco.GREEN)));
 		Player p = (Player) sender;
 		p.teleport(new Location(p.getWorld(), -80, 64, 92));
 		return true;
