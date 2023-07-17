@@ -8,10 +8,15 @@ import java.util.UUID;
 
 import ifarded.lol.ifu.cmds.Civilization;
 import ifarded.lol.ifu.cmds.IFUCmd;
+import ifarded.lol.ifu.cmds.SitCommand;
 import ifarded.lol.ifu.listeners.CommandListener;
 import ifarded.lol.ifu.listeners.CommandSuggestionListener;
 import ifarded.lol.ifu.listeners.JoinListener;
 import ifarded.lol.ifu.listeners.OpListener;
+import ifarded.lol.ifu.listeners.PlayerArmorStandManipulate;
+import ifarded.lol.ifu.listeners.PlayerDeath;
+import ifarded.lol.ifu.listeners.PlayerQuit;
+import ifarded.lol.ifu.listeners.PlayerTeleport;
 import ifarded.lol.ifu.listeners.ServerPingListener;
 
 import org.bukkit.Bukkit;
@@ -29,9 +34,9 @@ public class IFUtilities extends JavaPlugin {
     public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
     private Map<UUID, ArmorStand> seats = new HashMap();
     private Permission sitPermission;
-    private String sitDownMessage;
-    private String sitUpMessage;
-    private String sitFailMessage;
+    private String sitDownMessage = this.getConfig().getString("sitdown-message");
+    private String sitUpMessage = this.getConfig().getString("situp-message");
+    private String sitFailMessage = this.getConfig().getString("sitfail-message");
     // Component.text("[")
     // .color(IFColors.AQUA)
     // .append(
@@ -55,6 +60,9 @@ public class IFUtilities extends JavaPlugin {
         reloadConfig();
         checkGroups();
         initListeners();
+
+        getCommand("sit").setExecutor(new SitCommand(this));
+
         getCommand("ifu").setExecutor(new IFUCmd());
         getCommand("ifu").setTabCompleter(new IFUCmd());
 
@@ -63,11 +71,11 @@ public class IFUtilities extends JavaPlugin {
     }
 
     public void onDisable() {
-        Object[] var4;
-        int var3 = (var4 = this.seats.keySet().toArray()).length;
+        Object[] seatList;
+        int seatListLength = (seatList = this.seats.keySet().toArray()).length;
 
-        for (int var2 = 0; var2 < var3; ++var2) {
-            Object uuid = var4[var2];
+        for (int i = 0; i < seatListLength; ++i) {
+            Object uuid = seatList[i];
             IFPlayer player = new IFPlayer(Bukkit.getPlayer((UUID) uuid));
             player.setSitting(false);
         }
@@ -79,7 +87,12 @@ public class IFUtilities extends JavaPlugin {
         pw.registerEvents(new CommandSuggestionListener(), this);
         pw.registerEvents(new CommandListener(), this);
         pw.registerEvents(new OpListener(), this);
-        pw.registerEvents(new ServerPingListener(), plugin);
+        pw.registerEvents(new ServerPingListener(), this);
+
+        pw.registerEvents(new PlayerArmorStandManipulate(), this);
+        pw.registerEvents(new PlayerDeath(), this);
+        pw.registerEvents(new PlayerTeleport(), this);
+        pw.registerEvents(new PlayerQuit(), this);
     }
 
     public void createConfig() {
