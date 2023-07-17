@@ -35,12 +35,12 @@ public class IFUtilities extends JavaPlugin {
     // Component.text("[")
     // .color(IFColors.AQUA)
     // .append(
-    //     Component.text("iFUtilities")
-    //     .color(IFColors.GREEN)
+    // Component.text("iFUtilities")
+    // .color(IFColors.GREEN)
     // )
     // .append(
-    //     Component.text("] ")
-    //     .color(IFColors.AQUA)
+    // Component.text("] ")
+    // .color(IFColors.AQUA)
     // )
     private static IFUtilities plugin;
 
@@ -66,9 +66,9 @@ public class IFUtilities extends JavaPlugin {
         Object[] var4;
         int var3 = (var4 = this.seats.keySet().toArray()).length;
 
-        for(int var2 = 0; var2 < var3; ++var2) {
+        for (int var2 = 0; var2 < var3; ++var2) {
             Object uuid = var4[var2];
-            SimpleSitPlayer player = new SimpleSitPlayer(Bukkit.getPlayer((UUID)uuid));
+            SimpleSitPlayer player = new SimpleSitPlayer(Bukkit.getPlayer((UUID) uuid));
             player.setSitting(false);
         }
     }
@@ -132,25 +132,22 @@ public class IFUtilities extends JavaPlugin {
 
     public Map<UUID, ArmorStand> getSeats() {
         return this.seats;
-     }
-  
-     public String getSitFailMessage() {
+    }
+
+    public String getSitFailMessage() {
         return this.sitFailMessage;
-     }
-  
-     public String getSitDownMessage() {
+    }
+
+    public String getSitDownMessage() {
         return this.sitDownMessage;
-     }
-  
-     public String getSitUpMessage() {
+    }
+
+    public String getSitUpMessage() {
         return this.sitUpMessage;
-     }
-  
-     public Permission getSitPermission() {
+    }
+
+    public Permission getSitPermission() {
         return this.sitPermission;
-     }
-  
-     private void sendConfigError(String message, Level level) {
-        this.getLogger().log(level, message);
-     }
+    }
+
 }
