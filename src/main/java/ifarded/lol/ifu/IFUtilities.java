@@ -1,6 +1,10 @@
 package ifarded.lol.ifu;
 
 import java.io.File;
+import java.util.logging.Level;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 import ifarded.lol.ifu.cmds.Civilization;
 import ifarded.lol.ifu.cmds.IFUCmd;
@@ -13,7 +17,9 @@ import ifarded.lol.ifu.listeners.ServerPingListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
+import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,6 +27,11 @@ public class IFUtilities extends JavaPlugin {
     public final String CURRENT_VERSION = this.getDescription().getVersion();
     public final String CONFIG_VERSION = this.getConfig().getString("version");
     public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
+    private Map<UUID, ArmorStand> seats = new HashMap();
+    private Permission sitPermission;
+    private String sitDownMessage;
+    private String sitUpMessage;
+    private String sitFailMessage;
     // Component.text("[")
     // .color(IFColors.AQUA)
     // .append(
@@ -49,6 +60,17 @@ public class IFUtilities extends JavaPlugin {
 
         getCommand("civilization").setExecutor(new Civilization());
         getCommand("civilization").setExecutor(new Civilization());
+    }
+
+    public void onDisable() {
+        Object[] var4;
+        int var3 = (var4 = this.seats.keySet().toArray()).length;
+
+        for(int var2 = 0; var2 < var3; ++var2) {
+            Object uuid = var4[var2];
+            SimpleSitPlayer player = new SimpleSitPlayer(Bukkit.getPlayer((UUID)uuid));
+            player.setSitting(false);
+        }
     }
 
     private void initListeners() {
@@ -107,4 +129,28 @@ public class IFUtilities extends JavaPlugin {
     public static IFUtilities getPlugin() {
         return plugin;
     }
+
+    public Map<UUID, ArmorStand> getSeats() {
+        return this.seats;
+     }
+  
+     public String getSitFailMessage() {
+        return this.sitFailMessage;
+     }
+  
+     public String getSitDownMessage() {
+        return this.sitDownMessage;
+     }
+  
+     public String getSitUpMessage() {
+        return this.sitUpMessage;
+     }
+  
+     public Permission getSitPermission() {
+        return this.sitPermission;
+     }
+  
+     private void sendConfigError(String message, Level level) {
+        this.getLogger().log(level, message);
+     }
 }
