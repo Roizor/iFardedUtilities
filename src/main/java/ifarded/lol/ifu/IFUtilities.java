@@ -33,7 +33,7 @@ public class IFUtilities extends JavaPlugin {
     public final String CONFIG_VERSION = this.getConfig().getString("version");
     public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
     private Map<UUID, ArmorStand> seats = new HashMap();
-    private Permission sitPermission = new Permission(this.getConfig().getString("sit-permission"));
+    private Permission sitPermission = new Permission("ifu.sit");
     private String sitDownMessage = this.getConfig().getString("sitdown-message");
     private String sitUpMessage = this.getConfig().getString("situp-message");
     private String sitFailMessage = this.getConfig().getString("sitfail-message");

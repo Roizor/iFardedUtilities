@@ -7,7 +7,6 @@ import org.bukkit.event.server.ServerListPingEvent;
 import ifarded.lol.ifu.IFUtilities;
 import ifarded.lol.ifu.util.IFDeco;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextDecoration;
 
 public class ServerPingListener implements Listener {
 	@EventHandler
