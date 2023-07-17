@@ -68,7 +68,7 @@ public class IFUtilities extends JavaPlugin {
 
         for (int var2 = 0; var2 < var3; ++var2) {
             Object uuid = var4[var2];
-            SimpleSitPlayer player = new SimpleSitPlayer(Bukkit.getPlayer((UUID) uuid));
+            IFPlayer player = new IFPlayer(Bukkit.getPlayer((UUID) uuid));
             player.setSitting(false);
         }
     }
