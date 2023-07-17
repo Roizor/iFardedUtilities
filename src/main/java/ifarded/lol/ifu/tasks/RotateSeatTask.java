@@ -58,8 +58,8 @@ public class RotateSeatTask extends BukkitRunnable {
 
 		while (asIterator.hasNext()) {
 			ArmorStand armorstand = (ArmorStand) asIterator.next();
-			if (armorstand.getPassenger() != null) {
-				this.alignArmorStand.align(armorstand, armorstand.getPassenger().getLocation().getYaw());
+			if (armorstand.getPassengers().get(0) != null) {
+				this.alignArmorStand.align(armorstand, armorstand.getPassengers().get(0).getLocation().getYaw());
 			}
 		}
 
