@@ -34,7 +34,7 @@ public class IFUtilities extends JavaPlugin {
     public final String CURRENT_VERSION = this.getPluginMeta().getVersion();
     public final String CONFIG_VERSION = this.getConfig().getString("version");
     public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
-    private Map<UUID, ArmorStand> seats = new HashMap();
+    private Map<UUID, ArmorStand> seats = new HashMap<UUID, ArmorStand>();
     private Permission sitPermission = new Permission("ifu.sit");
     public static TextComponent COMPONENT_PREFIX = Component.text("[")
     .color(IFDeco.AQUA)
