@@ -24,13 +24,13 @@ public class ServerPingListener implements Listener {
 						.appendNewline()
 						.append(Component.text("        "))
 						.append(
-								Component.text("GRIEFING IS A BANNABLE")
+								Component.text("GRIEFING IS A")
 										.color(IFDeco.DARK_AQUA)
 										.decorate(IFDeco.BOLD)
 						)
 						.append(Component.text(" - "))
 						.append(
-							Component.text("OFFENSE")
+							Component.text("BANNABLE OFFENSE")
 							.color(IFDeco.YELLOW)
 							.decorate(IFDeco.BOLD)
 						)
