@@ -39,8 +39,7 @@ groups:
       - bukkit:version
       - bukkit:about
       #The plugin commands
-      - ifutilities:ifu
-      - ifu
+
     #If the value is blacklist, the commands are blocked and invisible
     #If the value is whitelist, the commands only executable and visible
     group-mode: blacklist
