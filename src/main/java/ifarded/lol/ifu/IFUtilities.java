@@ -12,7 +12,6 @@ import ifarded.lol.ifu.listeners.CommandListener;
 import ifarded.lol.ifu.listeners.CommandSuggestionListener;
 import ifarded.lol.ifu.listeners.JoinListener;
 import ifarded.lol.ifu.listeners.OpListener;
-import ifarded.lol.ifu.listeners.PaperServerPingListener;
 import ifarded.lol.ifu.listeners.PlayerArmorStandManipulate;
 import ifarded.lol.ifu.listeners.PlayerDeath;
 import ifarded.lol.ifu.listeners.PlayerQuit;
@@ -87,7 +86,6 @@ public class IFUtilities extends JavaPlugin {
 
     private void initListeners() {
         PluginManager pw = Bukkit.getPluginManager();
-        pw.registerEvents(new PaperServerPingListener(), this);
         pw.registerEvents(new JoinListener(), this);
         pw.registerEvents(new CommandSuggestionListener(), this);
         pw.registerEvents(new CommandListener(), this);
