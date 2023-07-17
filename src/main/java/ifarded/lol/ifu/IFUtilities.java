@@ -34,9 +34,6 @@ public class IFUtilities extends JavaPlugin {
     public static final String PREFIX = ChatColor.translateAlternateColorCodes('&', "&b[&aiFUtilities&b] &r");
     private Map<UUID, ArmorStand> seats = new HashMap();
     private Permission sitPermission = new Permission("ifu.sit");
-    private String sitDownMessage = this.getConfig().getString("sitdown-message");
-    private String sitUpMessage = this.getConfig().getString("situp-message");
-    private String sitFailMessage = this.getConfig().getString("sitfail-message");
     // Component.text("[")
     // .color(IFColors.AQUA)
     // .append(
@@ -146,19 +143,7 @@ public class IFUtilities extends JavaPlugin {
     public Map<UUID, ArmorStand> getSeats() {
         return this.seats;
     }
-
-    public String getSitFailMessage() {
-        return this.sitFailMessage;
-    }
-
-    public String getSitDownMessage() {
-        return this.sitDownMessage;
-    }
-
-    public String getSitUpMessage() {
-        return this.sitUpMessage;
-    }
-
+    
     public Permission getSitPermission() {
         return this.sitPermission;
     }

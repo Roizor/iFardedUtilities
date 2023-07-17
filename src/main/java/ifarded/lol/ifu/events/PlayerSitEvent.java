@@ -6,14 +6,16 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
+import net.kyori.adventure.text.Component;
+
 public class PlayerSitEvent extends Event implements Cancellable {
    private static final HandlerList handlers = new HandlerList();
    private Player player;
    private ArmorStand seat;
-   private String message;
+   private Component message;
    private boolean canceled = false;
 
-   public PlayerSitEvent(Player player, ArmorStand seat, String message) {
+   public PlayerSitEvent(Player player, ArmorStand seat, Component message) {
       this.player = player;
       this.seat = seat;
       this.message = message;
@@ -27,11 +29,11 @@ public class PlayerSitEvent extends Event implements Cancellable {
       return this.seat;
    }
 
-   public String getMessage() {
+   public Component getMessage() {
       return this.message;
    }
 
-   public void setMessage(String message) {
+   public void setMessage(Component message) {
       this.message = message;
    }
 

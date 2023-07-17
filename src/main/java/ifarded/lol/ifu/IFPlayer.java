@@ -2,6 +2,9 @@ package ifarded.lol.ifu;
 
 import ifarded.lol.ifu.events.PlayerSitEvent;
 import ifarded.lol.ifu.events.PlayerStopSittingEvent;
+import ifarded.lol.ifu.util.IFDeco;
+import net.kyori.adventure.text.Component;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.ArmorStand;
@@ -27,7 +30,7 @@ public class IFPlayer {
          ArmorStand seat = (ArmorStand)location.getWorld().spawn(location.clone().subtract(0.0D, 1.7D, 0.0D), ArmorStand.class);
          seat.setGravity(false);
          seat.setVisible(false);
-         PlayerSitEvent playerSitEvent = new PlayerSitEvent(this.player, seat, this.ifu.getSitDownMessage());
+         PlayerSitEvent playerSitEvent = new PlayerSitEvent(this.player, seat, Component.text("You are now sitting!").color(IFDeco.AQUA));
          Bukkit.getPluginManager().callEvent(playerSitEvent);
          if (playerSitEvent.isCancelled()) {
             seat.remove();
@@ -39,7 +42,7 @@ public class IFPlayer {
          this.ifu.getSeats().put(this.player.getUniqueId(), seat);
       } else if (!arg && this.isSitting()) {
          ArmorStand seat = (ArmorStand)this.ifu.getSeats().get(this.player.getUniqueId());
-         PlayerStopSittingEvent playerStopSittingEvent = new PlayerStopSittingEvent(this.player, seat, this.ifu.getSitUpMessage());
+         PlayerStopSittingEvent playerStopSittingEvent = new PlayerStopSittingEvent(this.player, seat, Component.text("You are no longer sitting!").color(IFDeco.AQUA));
          Bukkit.getPluginManager().callEvent(playerStopSittingEvent);
          this.player.sendMessage(playerStopSittingEvent.getMessage());
          this.ifu.getSeats().remove(this.player.getUniqueId());

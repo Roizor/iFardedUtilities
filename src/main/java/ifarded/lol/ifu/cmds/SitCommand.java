@@ -32,7 +32,7 @@ public class SitCommand implements CommandExecutor {
          } else if (player.getBukkitPlayer().isOnGround()) {
             player.setSitting(true);
          } else {
-            player.getBukkitPlayer().sendMessage(this.ifu.getSitFailMessage());
+            player.getBukkitPlayer().sendMessage(Component.text("You cannot sit in the air!").color(IFDeco.AQUA));
          }
 
          return true;

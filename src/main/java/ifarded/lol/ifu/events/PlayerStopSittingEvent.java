@@ -5,13 +5,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
+import net.kyori.adventure.text.Component;
+
 public class PlayerStopSittingEvent extends Event {
    private static final HandlerList handlers = new HandlerList();
    private Player player;
    private ArmorStand seat;
-   private String message;
+   private Component message;
 
-   public PlayerStopSittingEvent(Player player, ArmorStand seat, String message) {
+   public PlayerStopSittingEvent(Player player, ArmorStand seat, Component message) {
       this.player = player;
       this.seat = seat;
       this.message = message;
@@ -25,11 +27,11 @@ public class PlayerStopSittingEvent extends Event {
       return this.seat;
    }
 
-   public String getMessage() {
+   public Component getMessage() {
       return this.message;
    }
 
-   public void setMessage(String message) {
+   public void setMessage(Component message) {
       this.message = message;
    }
 
