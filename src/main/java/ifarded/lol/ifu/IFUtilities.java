@@ -5,9 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import ifarded.lol.ifu.cmds.Civilization;
-import ifarded.lol.ifu.cmds.IFUCmd;
-import ifarded.lol.ifu.cmds.SitCommand;
+import ifarded.lol.ifu.cmds.*;
 import ifarded.lol.ifu.listeners.CommandListener;
 import ifarded.lol.ifu.listeners.CommandSuggestionListener;
 import ifarded.lol.ifu.listeners.JoinListener;
@@ -23,6 +21,7 @@ import net.kyori.adventure.text.TextComponent;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.WorldCreator;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
@@ -62,15 +61,23 @@ public class IFUtilities extends JavaPlugin {
         checkGroups();
         initListeners();
 
-        getCommand("sit").setExecutor(new SitCommand(this));
+        addCommands();
+        addTabCompleters();
 
-        getCommand("ifu").setExecutor(new IFUCmd());
-        getCommand("ifu").setTabCompleter(new IFUCmd());
-
-        getCommand("civilization").setExecutor(new Civilization());
-        getCommand("civilization").setExecutor(new Civilization());
+        getServer().createWorld(new WorldCreator("ri_mo_server"));
     }
 
+    public void addTabCompleters() {
+        getCommand("ifu").setTabCompleter(new IFUCmd());
+    }
+
+    public void addCommands() {
+        getCommand("sit").setExecutor(new SitCommand(this));
+        getCommand("ifu").setExecutor(new IFUCmd());
+        getCommand("civilization").setExecutor(new Civilization());
+        getCommand("civilization").setExecutor(new Civilization());
+
+    }
     public void onDisable() {
         Object[] seatList;
         int seatListLength = (seatList = this.seats.keySet().toArray()).length;

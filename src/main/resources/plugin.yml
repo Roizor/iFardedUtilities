@@ -19,3 +19,11 @@ commands:
     description: Sit!
     usage: /sit
     permission: ifu.sit
+  rimotp:
+    description: Teleport to the Ri an Mo world
+    usage: /rimotp
+    permission: ifu.rimotp
+  rimorl:
+    description: Reload the Ri an Mo world
+    usage: /rimorl
+    permission: ifu.rimorl

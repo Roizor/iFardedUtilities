@@ -25,13 +25,15 @@ public class ServerPingListener implements Listener {
 						.append(Component.text("        "))
 						.append(
 								Component.text("GRIEFING IS A")
-										.color(IFDeco.DARK_AQUA)
+										.color(IFDeco.GOLD)
 										.decorate(IFDeco.BOLD)
 						)
-						.append(Component.text(" - "))
+						.append(Component.text(" - ")
+								.color(IFDeco.GRAY)
+								.decorate(IFDeco.BOLD))
 						.append(
 							Component.text("BANNABLE OFFENSE")
-							.color(IFDeco.YELLOW)
+							.color(IFDeco.DARK_AQUA)
 							.decorate(IFDeco.BOLD)
 						)
 				);
